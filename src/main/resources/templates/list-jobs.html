@@ -11,24 +11,38 @@
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
     <!-- TODO #1 - Use a loop to display job results in a table. -->
-    <table th:each="job: ${jobs}" class="table table-striped">
-        <tr>
-            <td th:text="${'ID: '+ job.id }"></td>
-        </tr>
-        <tr>
-            <td th:text="${'Name: '+ job.name }"></td>
-        </tr>
-        <tr>
-            <td th:text="${'Employer: '+ job.employer }"></td>
-        </tr>
-        <tr>
-            <td th:text="${'Location: '+ job.location }"></td>
-        </tr>
-        <tr>
-            <td th:text="${'Position Type: '+ job.positionType}"></td>
-        </tr>
-        <tr>
-            <td th:text="${'Skill: '+ job.coreCompetency }"></td>
+<!--    <table th:each="job: ${jobs}" class="table table-striped">-->
+<!--        <tr >-->
+<!--            <td th:text="${'ID: '+ job.id }"></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td th:text="${'Name: '+ job.name }"></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td th:text="${'Employer: '+ job.employer }"></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td th:text="${'Location: '+ job.location }"></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td th:text="${'Position Type: '+ job.positionType}"></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td th:text="${'Skill: '+ job.coreCompetency }"></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+    <table  class="table table-striped">
+        <tr th:each="job: ${jobs}">
+            <td>
+                <ul style="list-style-type:none">
+                    <li th:text="${'ID: '+ job.id }"></li>
+                    <li th:text="${'Name: '+ job.name }"></li>
+                    <li th:text="${'Employer: '+ job.employer }"></li>
+                    <li th:text="${'Location: '+ job.location }"></li>
+                    <li th:text="${'Position Type: '+ job.positionType}"></li>
+                    <li th:text="${'Skill: '+ job.coreCompetency }"></li>
+                </ul>
+            </td>
         </tr>
     </table>
 
